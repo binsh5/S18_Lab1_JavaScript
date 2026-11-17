@@ -21,6 +21,15 @@ function genererContenu() {
       }
      })
     parent.appendChild(h2)
+    let aside = document.createElement("aside")
+    aside.textContent = "Plus de détails à propos de: " + i
+    parent.appendChild(aside)
+    h2.addEventListener("mouseenter", function(event){
+      aside.classList.add("show")
+     })
+     h2.addEventListener("mouseleave", function(event){
+      aside.classList.remove("show")
+     })
     let p = document.createElement("p")
     p.textContent = contenu + " " + i
     parent.appendChild(p)
